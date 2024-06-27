@@ -26,6 +26,7 @@
       input
       let num = input.value;
       const x = /\D/g;
+      const dash = /-/
       console.log(num)
       if(num == "") {
         alert("Please provide a phone number")
@@ -35,6 +36,9 @@
      if(num.length <= 16 && num.length >= 10) {
       if(num.length == 10 && num !== x) {
         return console.log('worked');       
+      }
+      if(num.length == 12 && num.charAt(3) == dash) {
+        return console.log('-Worked')
       }
         if(num.length == 11 && num[0] == 1) {
          console.log('number')
