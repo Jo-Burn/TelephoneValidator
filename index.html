@@ -25,22 +25,24 @@
      function validate() {
       input
       let num = input.value;
-      
+      const x = /\D/g;
       console.log(num)
       if(num == "") {
         alert("Please provide a phone number")
         return console.log('nope')
       } 
       
-     if(num.length <= 14 && num.length >= 10) {
-        
-        if(num.length == 10 || num.length == 11 && num[0] == 1) {
+     if(num.length <= 16 && num.length >= 10) {
+      if(num.length == 10 && num !== x) {
+        return console.log('worked');       
+      }
+        if(num.length == 11 && num[0] == 1) {
          console.log('number')
          out.innerHTML = "Valid USA Number";
         }
         else {
         console.log('no')
-        out.innerHTML = "Not A Valid USA Number"
+        return out.innerHTML = "Not A Valid USA Number"
        }
       }  else {
         console.log('no')
