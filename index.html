@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="faviconStandIn.png">
+    <title>Phone Number Validator</title>
+</head>
+<body>
+    <div id="inputs">
+     <input type="tel" id="number" placeholder="Enter A Phone Number">
+     <button id="click" value="Submit" onclick="validate()">Submit</button>
+     <button id="clear" onclick="reset()">Clear</button>
+     <div id="out">
+      <p></p>
+     </div>
+     
+    </div>
+   
+    <script>
+     let input = document.getElementById('number');
+     let click = document.getElementById('click');
+     let out = document.getElementById('out');
+     let clear = document.getElementById('clear');
+     function validate() {
+      input
+      let num = input.value;
+      
+      //console.log(x)
+      console.log(num)
+      if(num == "") {
+        alert("Please provide a phone number")
+        return console.log('nope')
+      } 
+      
+     if(num.length <= 14 && num.length >= 10) {
+        
+        if(num.length == 10 || num.length == 11 && num[0] == 1) {
+         console.log('number')
+         out.innerHTML = "Valid USA Number";
+        }
+        else {
+        console.log('no')
+        out.innerHTML = "Not A Valid USA Number"
+       }
+      }  else {
+        console.log('no')
+        out.innerHTML = "Not A Valid USA Number"
+      }
+    }
+    function reset() {
+      out.innerHTML = "";
+    }
+    </script>
+</body>
+</html>
