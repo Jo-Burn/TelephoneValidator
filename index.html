@@ -24,7 +24,8 @@
      let clear = document.getElementById('clear');
      function validate() {
       input
-      let num = input.value;
+      let num = input.toString();
+      console.log(num.value)
       const x = /\D/g;
       const dash = /-/
       console.log(num)
@@ -37,7 +38,7 @@
       if(num.length == 10 && num !== x) {
         return console.log('worked');       
       }
-      if(num.length == 12 && num.charAt(3) == dash) {
+      if(num.length == 12 && num.search(/-/) == 3) {
         return console.log('-Worked')
       }
         if(num.length == 11 && num[0] == 1) {
