@@ -34,8 +34,9 @@
       } 
       
      if(num.length <= 16 && num.length >= 10) {
-      if(num.length == 12 && num[1] == 0) {
+      if(num.length == 12 && num[3] == '-' && num[7] == '-') {
         console.log('-Worked')
+        return out.innerHTML = "Valid USA Number";
       }
       if(num.length == 10 && num !== x) {
         out.innerHTML = "Valid USA Number";
