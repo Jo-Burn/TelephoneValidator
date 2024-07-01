@@ -26,7 +26,6 @@
       input
       let num = input.value;
       const x = /\D/g;
-      const dash = /-/;
       console.log(num)
       if(num == "") {
         alert("Please provide a phone number")
@@ -34,8 +33,12 @@
       } 
       
      if(num.length <= 16 && num.length >= 10) {
-      if(num.length == 12 && num[3] == '-' && num[7] == '-') {
+      if(num.length == 12 && num[3] == '-' && num[7] == '-' || num.length == 13 && num[4] == '-' && num[8] == '-' && num[0] == 1) {
         console.log('-Worked')
+        return out.innerHTML = "Valid USA Number";
+      }
+      if(num.length == 12 && num[0] == '(' && num[4] == ')' || num.length == 13 && num[1] == '(' && num[5] == ')' && num[0] == 1) {
+        console.log('(Worked)')
         return out.innerHTML = "Valid USA Number";
       }
       if(num.length == 10 && num !== x) {
