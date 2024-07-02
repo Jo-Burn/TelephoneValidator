@@ -24,7 +24,8 @@
      let clear = document.getElementById('clear');
      function validate() {
       input
-      let num = input.value;
+      let num1 = input.value;
+      let num = num1.replace(/\s/g, "");
       const x = /\D/g;
       console.log(num)
       if(num == "") {
@@ -39,6 +40,10 @@
       }
       if(num.length == 12 && num[0] == '(' && num[4] == ')' || num.length == 13 && num[1] == '(' && num[5] == ')' && num[0] == 1) {
         console.log('(Worked)')
+        return out.innerHTML = "Valid USA Number";
+      }
+      if(num.length == 13 && num[0] == '(' && num[8] == '-' || num.length == 14 && num[1] == '(' && num[9] == '-' && num[0] == 1) {
+        console.log('(Worked-')
         return out.innerHTML = "Valid USA Number";
       }
       if(num.length == 10 && num !== x) {
