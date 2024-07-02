@@ -42,7 +42,7 @@
         console.log('(Worked)')
         return out.innerHTML = "Valid USA Number";
       }
-      if(num.length == 13 && num[0] == '(' && num[8] == '-' || num.length == 14 && num[1] == '(' && num[9] == '-' && num[0] == 1) {
+      if(num.length == 13 && num[0] == '(' && num[8] == '-' && num[4] != '-' || num.length == 14 && num[1] == '(' && num[9] == '-' && num[5] != '-' && num[0] == 1) {
         console.log('(Worked-')
         return out.innerHTML = "Valid USA Number";
       }
@@ -57,11 +57,11 @@
         }
         else {
         console.log('no')
-        return out.innerHTML = "Not A Valid USA Number"
+        return out.innerHTML = `Not A Valid USA Number ${num1}`
        }
       }  else {
         console.log('no')
-        out.innerHTML = "Not A Valid USA Number"
+        out.innerHTML = `Not A Valid USA Number ${num1}`
       }
     }
     function reset() {
